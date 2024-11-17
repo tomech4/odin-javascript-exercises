@@ -1,21 +1,33 @@
-const palindromes = function () {
-// from the definition of palidrome: 
-// "A palindrome is a string that is spelled the same both forwards and backwards, usually without considering punctuation or word breaks"
-// so, this is what we would want to do:
-// - take a string;
-// - stripe all special characters
-// - remove spaces
-// - change all symbols to lower case
-// - save the string that we end up with
-// - create a new variable
-// - create a loop:
-//     - take each symbol of original string starting from the end
-//     - write push||shift taken symbol into new string variable in the beginning
-//     - and continue doing it until we reach the end of original string
-// - compare original and new string with "==="
-//     - if the same, return true
-//     - if different, return false
+const palindromes = function (a) {
+  function transformStr(a) {
+    let arr = [];
+    let x = a.toLowerCase();
+    for (let i = 0; i < x.length; i++) {
+      if (x[i].match(/[a-z]|[0-9]/)) {
+        arr.unshift(x[i]);
+      } else {
+        continue;
+      }
+    }
+    return mirroredResult = arr.join("");
+  }
+
+  function formatStr(a) {
+    let arr = [];
+    let x = a.toLowerCase();
+    for (let i = 0; i < x.length; i++) {
+      if (x[i].match(/[a-z]|[0-9]/)) {
+        arr.push(x[i]);
+      } else {
+        continue;
+      }
+    }
+    return formattedResult = arr.join("");
+  }
+  return formatStr(a) === transformStr(a);
 };
+
+palindromes('r3ace3car');
 
 // Do not edit below this line
 module.exports = palindromes;
